@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/*import Login from "./Login";
+import Registration from "./Registration"*/
+import {
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+import Login from "./Login";
+import Registration from "./Registration";
+import Request from "./Requst";
+import ForumList from "./forumList";
+export default function App() {
+    return (
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/Login">LogIn</Link>
+                        </li>
+                        <li>
+                            <Link to="/Registration">Registration</Link>
+                        </li>
+                        <li>
+                            <Link to="/forumList">Forum</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Registration" element={<Registration />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/forumList" element={<ForumList />} />
+                </Routes>
+            </div>
+    );
 }
 
-export default App;
+
+
+function Home() {
+    return<> <h2>Home</h2>
+        </>;
+}
+
+
+

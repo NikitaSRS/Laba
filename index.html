@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+
+  /*    function RangeHigh({ max = 0, min = 100 }) {
+        const [short, setValue] = React.useState(0);
+        const Short = React.useRef(short);
+        function handleChange(e) {
+          setValue(Number.parseInt(e.target.value));
+        }
+        return <>
+                  <div> Ширина:
+            <label>
+            <input
+                    type="range"
+                    value={short}
+                    onChange={handleChange}
+            />
+            </label>
+            {short}
+          </div>
+        </>;
+      }*/
+
+
+    function App() {
+      return <>
+        <RangeLength/>
+      </>;
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('root'));
+
+  </script>
+</head>
+<body>
+<div id="root">10</div>
+<p id="temper"></p>
+</body>
+</html>
