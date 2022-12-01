@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { FormEvent } from "react";
 import styles from "./module.css";
-import {Route} from "react-router-dom";
+import {Route, useNavigate} from "react-router-dom";
 import Login from "./Login";
 
 
@@ -12,7 +12,7 @@ export default function Registration() {
     const [passwordError, setPasswordError] = useState("");
     const [passwordRepeat, setPasswordRepeat] = useState("");
     const [passwordRepeatError, setPasswordRepeatError] = useState("");
-
+    const navigate = useNavigate();
     const isValid = (): boolean => {
         let result = true;
 
@@ -94,7 +94,7 @@ export default function Registration() {
                     {passwordRepeatError}
                 </div>}
             </div>
-            <button type="submit">Войти</button>
+            <button onClick={() => navigate("/Login")}>Зарегистрироваться</button>
         </form>
     </>;
 }

@@ -2,23 +2,17 @@ import React from "react";
 import './App.css';
 /*import Login from "./Login";
 import Registration from "./Registration"*/
-import {
-    Routes,
-    Route,
-    Link
-} from "react-router-dom";
 import Login from "./Login";
 import Registration from "./Registration";
 import Request from "./Requst";
 import ForumList from "./forumList";
+import {Link, Route, Routes} from "react-router-dom";
+import CreateTheme from "./CreateTheme";
 export default function App() {
     return (
             <div>
                 <nav>
                     <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
                         <li>
                             <Link to="/Login">LogIn</Link>
                         </li>
@@ -33,8 +27,8 @@ export default function App() {
                 <Routes>
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Registration" element={<Registration />} />
-                    <Route path="/" element={<Home />} />
                     <Route path="/forumList" element={<ForumList />} />
+                    <Route path="/CreateTheme" element={<CreateTheme />} />
                 </Routes>
             </div>
     );
@@ -42,10 +36,7 @@ export default function App() {
 
 
 
-function Home() {
-    return<> <h2>Home</h2>
-        </>;
-}
+
 
 
 

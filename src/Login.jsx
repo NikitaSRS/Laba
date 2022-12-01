@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import { FormEvent } from "react";
 import styles from "./module.css";
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
     const [login, setLogin] = useState("");
     const [loginError, setLoginError] = useState("");
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
-
+    const navigate = useNavigate();
     const isValid = (): boolean => {
         let result = true;
 
@@ -38,14 +39,15 @@ export default function Login() {
         e.preventDefault();
 
         if (isValid()) {
-            // отправка данных на сервер
-            const response = await fetch("http://localhost:3001/user", {
+            const response = await fetch("http://localhost:3001", {
                 method: "POST",
+                credentials: "include", // ВАЖНО!
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
+                    login: "admin",
 
                 })
             });
@@ -73,7 +75,7 @@ export default function Login() {
                     {passwordError}
                 </div>}
             </div>
-            <button type="submit">Войти</button>
+            <button onClick={()=>navigate("/CreateTheme")}>Войти</button>
         </form>
     </>;
 }
