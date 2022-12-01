@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { Link } from 'react-router-dom'
 import { FormEvent } from "react";
 import styles from "./module.css";
 import {Link, Route, Routes} from "react-router-dom";
 import Login from "./Login";
 import Registration from "./Registration";
+import CreateTheme from "./CreateTheme";
 
 export default function ForumList() {
 
@@ -19,11 +19,9 @@ export default function ForumList() {
             <input type={"text"} placeholder={'Искать...'}/>
             <button type={"submit"}>🔎</button>
         </div>
-        <button onClick={() => Link<>}>
-            <Link to="/CreatTheme"/>
-        </button>
+        <button type={"submit"}>Добавить</button>
     <Routes>
-        <Route path="/CreateTheme" element={<ForumList />} />
+        <Route path="/CreateTheme" element={<CreateTheme />} />
     </Routes>
 
     </>;
