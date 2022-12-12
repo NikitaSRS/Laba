@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { FormEvent } from "react";
 import styles from "./module.css";
+import {useNavigate} from "react-router-dom";
 
 export default function CreateTheme() {
     const [Theme, setTheme] = useState("");
     const [Text, setText] = useState("");
+    const navigate = useNavigate();
     const isValid = (): boolean => {
         let result = true;
         return result;
@@ -41,8 +43,8 @@ export default function CreateTheme() {
             <input type={"text"}  value={Text} onChange={e => setText(e.target.value)}/>
         </div>
         <div>
-            <button type={"submit"}>Отмена</button>
-            <button type={"submit"}>Создать</button>
+            <button type={"submit"} onClick={() => navigate("/forumList")}>Отмена</button>
+            <button type={"submit"} onClick={() => navigate("/forumList")}>Создать</button>
         </div>
 
     </>;

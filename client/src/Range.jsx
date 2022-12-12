@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 export default function RangeLength({max = 0, min = 50}) {
     const [long, setValue] = useState(0);
-    const [short, setValueS] = nodeuseState(0);
+    const [short, setValueS] = useState(0);
 
     function handleChange(e) {
         setValue(Number.parseInt(e.target.value));
